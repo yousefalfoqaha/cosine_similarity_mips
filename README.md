@@ -56,22 +56,22 @@ The diagrams below illustrate the execution flow and logic of the program.
 
 ### `main` Function Flow
 
-[](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/main.png)
+![](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/main.png)
 
 
 ### `cosine_similarity` Function Flow
 
-[](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/cosine_similarity.png)
+![](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/cosine_similarity.png)
 
 
 ### `dot_product` Function Flow
 
-[](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/dot_product.png)
+![](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/dot_product.png)
 
 
 ### `euclidean_norm` Function Form
 
-[](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/euclidean_norm.png)
+![](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/euclidean_norm.png)
 
 
 ## Implementation
