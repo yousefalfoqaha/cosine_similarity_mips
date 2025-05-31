@@ -3,7 +3,6 @@
 **Written by:** Yousef Mustafa  
 **ID:** 20239502126  
 
----
 
 ## Objective
 
@@ -17,7 +16,6 @@ MIPS is often used in environments such as embedded systems, where minimal instr
 - Real-time sensor data comparison  
 - And many more...
 
----
 
 ## Theory
 
@@ -51,7 +49,6 @@ $$
 \cos(\theta) = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \cdot \|\mathbf{B}\|}
 $$
 
----
 
 ## Design
 
@@ -76,7 +73,6 @@ The diagrams below illustrate the execution flow and logic of the program.
 
 ![](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/euclidean_norm.png)
 
----
 
 ## Implementation
 
@@ -134,7 +130,6 @@ A modular procedure that takes in any two vectors, and computes the **dot produc
 
 Takes in a vector, calculating the dot product of the vector with itself by calling the `dot_product` procedure, the finally square rooting the dot product and returning to the caller.
 
----
 
 ## Debugging and Test Run
 
@@ -175,7 +170,6 @@ li      $v0, 6
 syscall
 ```
 
----
 
 ### Successful Test Run
 
