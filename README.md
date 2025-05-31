@@ -1,7 +1,7 @@
-# Cosine Similarity in MIPS  
+# Cosine Similarity in MIPS
 
 **Written by:** Yousef Mustafa  
-**ID:** 20239502126  
+**ID:** 20239502126
 
 
 ## Objective
@@ -10,10 +10,10 @@ The primary aim of this assignment is to demonstrate how **MIPS assembly languag
 
 MIPS is often used in environments such as embedded systems, where minimal instruction cycles and direct hardware interaction matter. Some real-world use cases of cosine similarity in such contexts include:
 
-- Anomaly detection  
-- Gesture recognition  
-- Robotics  
-- Real-time sensor data comparison  
+- Anomaly detection
+- Gesture recognition
+- Robotics
+- Real-time sensor data comparison
 - And many more...
 
 
@@ -86,9 +86,9 @@ The program is structured into the following modular procedures:
 
 ### `main`
 
-**Arguments**
-`$s0`: size of vectors A and B
-`$a0`: base address of vector A (`0x10010000`)
+**Arguments**<br>
+`$s0`: size of vectors A and B<br>
+`$a0`: base address of vector A (`0x10010000`)<br>
 `$a1`: base address of vector B (`0x10010040`)
 
 The main body of the program, receiving the user's vector size input, validating the input, and then calls `cosine_similarity` to compute the result, finally printing out the result.
@@ -96,11 +96,11 @@ The main body of the program, receiving the user's vector size input, validating
 
 ### `cosine_similarity`
 
-**Arguments**
-`$a2`: first vector base address
+**Arguments**<br>
+`$a2`: first vector base address<br>
 `$a3`: second vector base address
 
-**Returns**
+**Returns**<br>
 `$f30`: float of cosine similarity between first and second vector
 
 Responsible for returning the **cosine similarity**, given two vectors as arguments. This procedure is also responsible for calling `dot_product` (to calculate the numerator part of the formula), as well calling `euclidean_norm` for each vector (to calculate the denominator part of the formula).
@@ -110,11 +110,11 @@ Responsible for returning the **cosine similarity**, given two vectors as argume
 
 ### `dot_product`
 
-**Arguments**
-`$a2`: first vector base address
+**Arguments**<br>
+`$a2`: first vector base address<br>
 `$a3`: second vector base address
 
-**Returns**
+**Returns**<br>
 `$f30`: float of dot product between first and second vector
 
 A modular procedure that takes in any two vectors, and computes the **dot product** using the dot product algorithm, finally returning the result to the caller.
@@ -122,10 +122,10 @@ A modular procedure that takes in any two vectors, and computes the **dot produc
 
 ### `euclidean_norm`
 
-**Arguments**
+**Arguments**<br>
 `$a2`: vector base address
 
-**Returns**
+**Returns**<br>
 `$f30`: float of vector's Euclidean norm
 
 Takes in a vector, calculating the dot product of the vector with itself by calling the `dot_product` procedure, the finally square rooting the dot product and returning to the caller.
@@ -170,6 +170,7 @@ li      $v0, 6
 syscall
 ```
 
+---
 
 ### Successful Test Run
 
@@ -204,7 +205,7 @@ Cosine similarity result: 0.39364198
 While the program correctly calculates the cosine similarity between two vectors and is robust under various test conditions, expanding the functionality to compute the similarity among **multiple vectors** can provide deeper insights. One useful approach is to compute the **average pairwise cosine similarity** using the formula:
 
 $$
-\text{average\ similarity} = \frac{2}{n(n - 1)} \sum_{i < j} \text{cosine\ similarity}(v_i, v_j)
+\text{average similarity} = \frac{2}{n(n - 1)} \sum_{i < j} \text{cosine similarity}(v_i, v_j)
 $$
 
 Where:
@@ -212,7 +213,7 @@ Where:
 - $n$ is the total number of vectors.
 - $v_i,\ v_j$ are the $i$th and $j$th vectors in the set.
 - $cosine\ similarity(v_i,\ v_j)$ is the cosine similarity between vectors $v_i$ and $v_j$.
-- The summation $\sum_{i < j}$ goes over all unique pairs of vectors where $i < j$, avoiding repetition. 
+- The summation $\sum_{i < j}$ goes over all unique pairs of vectors where $i < j$, avoiding repetition.
 
 This enhancement would allow the program to assess the **overall similarity** or **cohesion** of a group of vectors, which is especially useful in applications like clustering, topic modeling, and document similarity analysis.
 
