@@ -225,11 +225,11 @@ AI assistance was used as a learning tool rather than for direct answers. Instea
 For example, when the program specification lacked enough temporary variables to compute cosine similarity, the AI suggested using `.data` declarations or the stack. This led to the idea of leveraging the stack for storing intermediate values. Additionally, the AI helped clarify how to call procedures within procedures while correctly managing return addresses using the stack.
 
 
-## Appendix A:
+## Appendix A
 
-The full code can be found in the GitHub repository, the program is named `cosine_similarity.s`.
+The full code can be found in the GitHub repository, the program is named `program.s`.
 
 
-## Appendix B:
+## Appendix B
 
 A sample conversation with the AI assistant can be found in the GitHub repository, the conversation is named `conversation.txt`.
