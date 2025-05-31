@@ -54,24 +54,24 @@ $$
 
 The diagrams below illustrate the execution flow and logic of the program.
 
-### "main" Function Flow
+### `main` Function Flow
 
-![[{5A951FD0-E810-4F41-9C76-E9DC49E740FC}.png]]
-
-
-### "cosine_similarity" Function Flow
-
-![[{BE5BCBDE-1524-42E1-A381-2258C037996D}.png]]
+[](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/main.png)
 
 
-### "dot_product" Function Flow
+### `cosine_similarity` Function Flow
 
-![[{09C0CB80-7311-441F-8522-93325E6EDD93}.png]]
+[](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/cosine_similarity.png)
 
 
-### "euclidean_norm" Function Form
+### `dot_product` Function Flow
 
-![[{6AA58791-0B0D-4418-8BB3-38415C70CBA4}.png]]
+[](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/dot_product.png)
+
+
+### `euclidean_norm` Function Form
+
+[](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/b240803123786432b2eed5393f67b194b5208793/diagrams/euclidean_norm.png)
 
 
 ## Implementation
