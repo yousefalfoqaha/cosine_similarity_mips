@@ -1,0 +1,95 @@
+ME:
+in the assignment, since i think its impossible to store and calculate both euclidean norms of vectors a and b as well as store the dot product,
+and also the dot product of each vector to itself using the euclidian norm,
+am i allowed to use more floating registers?
+
+AI ASSISTANT:
+You raise an excellent point! This is a classic problem in assembly programming with limited registers. Let me analyze what you need to store and calculate:
+What you need to compute:
+
+Dot product of A·B (for numerator)
+Euclidean norm of A = √(A·A)
+Euclidean norm of B = √(B·B)
+Final cosine similarity = (A·B) / (||A|| × ||B||)
+
+The register constraint problem:
+
+You only have f10 and f20 for temp operations
+You only have f30 for return values
+You need to store at least 3 intermediate results
+
+The solution - You DON'T need more registers!
+The key insight is that you should call procedures sequentially and use memory or the stack to store intermediate results. Here's the approach:
+
+.data
+# Reserve memory for intermediate results
+dot_product_result:     .float 0.0      # Store A·B
+norm_a_result:         .float 0.0      # Store ||A||
+norm_b_result:         .floAnswer to your question:
+No, you should NOT use more floating-point registers. The assignment constraints are intentional and designed to teach you proper memory management and procedure calling conventions.
+The correct approach:
+
+Use memory (either .data section or stack) to store intermediate results
+Call procedures sequentially - don't try to do everything at once
+Reuse f30 for each procedure's return value
+Use f10 and f20 only for temporary calculations within each procedure
+
+Why this works:
+
+Each procedure does its own calculation using only f10, f20, and f30
+Results are stored in memory between procedure calls
+You load the stored values only when you need to combine them
+The stack or data section acts as your "extended register file"
+
+Key insight for EuclideanNorm:
+For computing ||A||, you can reuse your DotProduct procedure by calling it with the same vector twice:
+
+DotProduct(A, A) gives you A·A
+Then take sqrt.s to get ||A|| = √(A·A)
+
+This approach teaches you real-world assembly programming skills: managing limited resources and using memory effectively when registers aren't sufficient.
+
+
+ME:
+wait i can just use the memory? i dont know why i thought i was not allowed to not use memory
+
+
+AI ASSISTANT:
+Exactly! You're absolutely allowed to use memory! In fact, that's the expected and standard approach in assembly programming when you have limited registers.
+You can use memory in several ways:
+1. Data section (most common for intermediate results):
+assembly.data
+dot_product_result: .float 0.0
+norm_a_result:      .float 0.0
+norm_b_result:      .float 0.0
+2. Stack (good for temporary storage):
+assemblyaddi $sp, $sp, -12    # Make room for 3 floats
+s.s  $f30, 8($sp)     # Store first result
+s.s  $f30, 4($sp)     # Store second result
+s.s  $f30, 0($sp)     # Store third result
+3. Pre-allocated memory regions (like you're already doing for vectors):
+assembly# You're already using these!
+li $a0, 0x10010000    # Vector A in memory
+li $a1, 0x10010040    # Vector B in memory
+# Could also use 0x10010080 for intermediate results
+Why you might have thought you couldn't use memory:
+Many students initially think assembly programming means "registers only" because:
+
+Registers are faster than memory
+Early examples focus on register operations
+The constraints mention specific registers to use
+
+But the reality is:
+
+Registers are for active computation
+Memory is for storage when you run out of registers
+This is exactly how real programs work!
+
+The assignment expects you to use memory because:
+
+It's impossible to do otherwise with only 3 floating-point registers
+It teaches real-world skills - managing the memory hierarchy
+It's the standard practice in assembly programming
+Your vectors are already in memory - you're just extending this concept
+
+So yes, go ahead and use memory freely! The register constraints are just telling you which registers to use for active calculations, not prohibiting memory usage for storage.
