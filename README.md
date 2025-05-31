@@ -3,7 +3,6 @@
 **Written by:** Yousef Mustafa  
 **ID:** 20239502126  
 
----
 
 ## Objective
 
@@ -17,7 +16,6 @@ MIPS is often used in environments such as embedded systems, where minimal instr
 - Real-time sensor data comparison  
 - And many more...
 
----
 
 ## Theory
 
@@ -33,7 +31,6 @@ $$
 \mathbf{A} \cdot \mathbf{B} = A_1B_1 + A_2B_2 + \dots + A_nB_n
 $$
 
----
 
 ### Euclidean Norm
 
@@ -43,7 +40,6 @@ $$
 \|\mathbf{A}\| = \sqrt{A_1^2 + A_2^2 + \dots + A_n^2}
 $$
 
----
 
 ### Cosine Similarity
 
@@ -53,7 +49,6 @@ $$
 \cos(\theta) = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \cdot \|\mathbf{B}\|}
 $$
 
----
 
 ## Design
 
@@ -63,24 +58,21 @@ The diagrams below illustrate the execution flow and logic of the program.
 
 ![[{5A951FD0-E810-4F41-9C76-E9DC49E740FC}.png]]
 
----
 
 ### "cosine_similarity" Function Flow
 
 ![[{BE5BCBDE-1524-42E1-A381-2258C037996D}.png]]
 
----
+
 ### "dot_product" Function Flow
 
 ![[{09C0CB80-7311-441F-8522-93325E6EDD93}.png]]
 
----
 
 ### "euclidean_norm" Function Form
 
 ![[{6AA58791-0B0D-4418-8BB3-38415C70CBA4}.png]]
 
----
 
 ## Implementation
 
@@ -91,7 +83,6 @@ The program is structured into the following modular procedures:
 - `euclidean_norm`
 - `bad_vector_size_exception`
 
----
 
 ### `main`
 
@@ -102,7 +93,6 @@ The program is structured into the following modular procedures:
 
 The main body of the program, receiving the user's vector size input, validating the input, and then calls `cosine_similarity` to compute the result, finally printing out the result.
 
----
 
 ### `cosine_similarity`
 
@@ -117,7 +107,6 @@ Responsible for returning the **cosine similarity**, given two vectors as argume
 
 > **Note:** The stack was used to store extra temporary variables across procedure calls, due to the program's specifications to only use registers `$f10` and `$f20` for temporary float calculations.
 
----
 
 ### `dot_product`
 
@@ -130,7 +119,6 @@ Responsible for returning the **cosine similarity**, given two vectors as argume
 
 A modular procedure that takes in any two vectors, and computes the **dot product** using the dot product algorithm, finally returning the result to the caller.
 
----
 
 ### `euclidean_norm`
 
@@ -142,7 +130,6 @@ A modular procedure that takes in any two vectors, and computes the **dot produc
 
 Takes in a vector, calculating the dot product of the vector with itself by calling the `dot_product` procedure, the finally square rooting the dot product and returning to the caller.
 
----
 
 ## Debugging and Test Run
 
@@ -212,7 +199,6 @@ Cosine similarity result: 0.39364198
 -- program is finished running --
 ```
 
----
 
 ## Conclusion and Future Improvements
 
@@ -231,7 +217,6 @@ Where:
 
 This enhancement would allow the program to assess the **overall similarity** or **cohesion** of a group of vectors, which is especially useful in applications like clustering, topic modeling, and document similarity analysis.
 
----
 
 ## Contributions
 
@@ -239,13 +224,11 @@ AI assistance was used as a learning tool rather than for direct answers. Instea
 
 For example, when the program specification lacked enough temporary variables to compute cosine similarity, the AI suggested using `.data` declarations or the stack. This led to the idea of leveraging the stack for storing intermediate values. Additionally, the AI helped clarify how to call procedures within procedures while correctly managing return addresses using the stack.
 
----
 
 ## Appendix A:
 
 The full code can be found in the GitHub repository, the program is named `cosine_similarity.s`.
 
----
 
 ## Appendix B:
 
