@@ -227,9 +227,9 @@ For example, when the program specification lacked enough temporary variables to
 
 ## Appendix A
 
-The full code can be found in the GitHub repository, the program is named `program.s`.
+The full code can be found in the GitHub repository, the program is in [`program.s`](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/main/program.s).
 
 
 ## Appendix B
 
-A sample conversation with the AI assistant can be found in the GitHub repository, the conversation is named `conversation.txt`.
+A sample conversation with the AI assistant can be found in the GitHub repository, the conversation is in [`conversation.txt`](https://github.com/yousefalfoqaha/cosine_similarity_mips/blob/main/conversation.txt).
