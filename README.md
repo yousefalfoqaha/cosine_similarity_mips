@@ -1,12 +1,8 @@
 # Cosine Similarity in MIPS
 
-**Written by:** Yousef Mustafa  
-**ID:** 20239502126
-
-
 ## Objective
 
-The primary aim of this assignment is to demonstrate how **MIPS assembly language** can be applied to solve real-world problems, specifically through the implementation of **cosine similarity**. This enhances the understanding of low-level performance optimization and algorithmic logic in systems where efficiency is critical.
+The primary aim of this pet project is to demonstrate how the **MIPS assembly language** can be applied to solve real-world problems, specifically through the implementation of **cosine similarity**. This enhances the understanding of low-level performance optimization and algorithmic logic in systems where efficiency is critical.
 
 MIPS is often used in environments such as embedded systems, where minimal instruction cycles and direct hardware interaction matter. Some real-world use cases of cosine similarity in such contexts include:
 
@@ -85,7 +81,7 @@ The program is structured into the following modular procedures:
 
 
 ### `main`
-
+assignment 
 **Arguments**<br>
 `$s0`: size of vectors A and B<br>
 `$a0`: base address of vector A (`0x10010000`)<br>
